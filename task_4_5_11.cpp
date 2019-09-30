@@ -13,7 +13,7 @@ int main(){
         if (dict2.find(i) == dict2.end()) dict2[i] = 1;
         else dict2[i] += 1;
     }
-
+//
     if (dict1 == dict2) cout << "YES";
     else cout << "NO";
     return 0;
