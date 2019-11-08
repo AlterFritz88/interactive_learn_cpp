@@ -12,6 +12,7 @@ int main(){
         }
         cin >> temp;
     }
+    vector<int> odd;
     if (s.size() % 2 == 0){
         for (auto i : m){
             if (i.second % 2 != 0){
@@ -57,6 +58,7 @@ int main(){
     }
     cout << "YES" << endl;
     sort(vec.begin(), vec.end());
+    reverse(vec.begin(), vec.end());
     for (auto i: vec){
         cout << i;
     }
