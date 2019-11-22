@@ -3,4 +3,4 @@ project(interactive_learn_cpp)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(interactive_learn_cpp  task_6_4_5.cpp)
+add_executable(interactive_learn_cpp  task_6_4_15.cpp)
