@@ -3,12 +3,16 @@ using namespace std;
 
 vector<int> combination;
 vector<int> stuff;
+int weigh;
+int maximum = 0;
 
 void pretty_print(const vector<int>& v) {
-    static int count = 0;
-    cout << "combination no " << (++count) << ": [ ";
-    for (int i = 0; i < v.size(); ++i) { cout << v[i] << " "; }
-    cout << "] " << endl;
+    int sum = 0;
+    for (int i = 0; i < v.size(); ++i) { sum += v[i]; }
+    if (sum <= weigh and sum > maximum){
+        maximum = sum;
+    }
+    //cout << sum << endl;
 }
 
 void go(int offset, int k) {
@@ -26,13 +30,17 @@ void go(int offset, int k) {
 
 
 int main(){
-    int weigh, temp; cin >> weigh;
+    int temp; cin >> weigh;
 
     for (int i = 0; i < 10; i++){
         cin >> temp;
-        stuff.push_back(temp);
-    }
-    go(1, 4);
+        if (temp <= weigh){
+            stuff.push_back(temp);
+        }
 
+    }
+    for (int i = 1; i <= stuff.size(); i++)
+        go(0, i);
+    cout << maximum;
     return 0;
 }
