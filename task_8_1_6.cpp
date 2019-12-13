@@ -1,16 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int enemies, days, temp;
+int enemies, days;
+string temp;
 
-bool is_win(int enemy){
-    if (enemy == 0) return true;
-    if (enemy == 1) return false;
-    while(enemy > 0){
-        if (enemy % 10 == 0)
-            return true;
-        enemy /= 10;
-    }
+bool is_win(string enemy){
+
+   for (auto i : enemy) {
+       if (i == '0') return true;
+   }
     return false;
 }
 
@@ -19,10 +17,11 @@ int main(){
     int streak = 0, temp_streak = 0;
     for (int i = 0; i < days; i++){
         cin >> temp;
-        //cout << is_win(temp) << endl;
+
         if (is_win(temp)){
 
             temp_streak++;
+
             if (temp_streak > streak) streak = temp_streak;
         } else temp_streak = 0;
 
